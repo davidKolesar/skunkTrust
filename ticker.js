@@ -11,18 +11,11 @@ function queryTicker(callback)
 {	
 	var tickerEndpoint = "https://api.alternative.me/v2/ticker/?convert=EUR"
 	let xhr = new XMLHttpRequest();
-
-	//define callback to handle async call
-	function callback(response){
-		console.log("executing callback");
- 		console.log(JSON.parse(response));
-	}
-
 	
 	xhr.onreadystatechange = function(callback) {
 		if (this.readyState === 4 && this.status === 200) {
 		  var response = JSON.parse(this.responseText);
-			callback(response);
+			console.log(response);
 		}
 	  	}
 	xhr.open("GET", "https://cors-anywhere.herokuapp.com/" + tickerEndpoint);
