@@ -1,8 +1,8 @@
 var tickerData = "";
 
-function activateTicker() {
+function activateTicker() 
+{
 	queryTicker();
-	return tickerData;
 }
 
 
@@ -12,11 +12,14 @@ function queryTicker(callback)
 	var tickerEndpoint = "https://api.alternative.me/v2/ticker/?convert=USD"
 	let xhr = new XMLHttpRequest();
 	
-	xhr.onreadystatechange = function(callback) {
-		if (this.readyState === 4 && this.status === 200) {
+	xhr.onreadystatechange = function(callback) 
+	{
+		if (this.readyState === 4 && this.status === 200) 
+		{
 		  var response = JSON.parse(this.responseText);
 			//handles asnyc xhr call
-			if(response !== undefined) {
+			if(response !== undefined) 
+			{
 				tickerData = response;	
 			}
 		}
@@ -27,4 +30,12 @@ function queryTicker(callback)
 }
 
 
-//access by tickerData.data[1].quotes.USD
+function displayData()
+{	
+	//get the first 10 cryptoCurrencies
+	for(var i = 0; i < 9; i++) 
+	{
+		document.getElementById("tickerText").innerHTML = tickerData.data[i].name  + " : $" + tickerData.data[i].quotes.USD.price;
+	}
+	
+}
