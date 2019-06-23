@@ -3,13 +3,22 @@ function activateTicker() {
 	function callback(retVal){
  		console.log(retVal);
     }
+
+	var url = https://api.alternative.me/v2/ticker/?convert=EUR;
 	
-	//send request to ticker API
-	var response = queryTicker(callback);
-		if (jsonResponse !== undefined ) {
-			console.log(JSON.parse(jsonResponse));
-		}
+	fetch(url).then(function(response) {
+	  return response.json();
+	}).then(function(data) {
+	  console.log(data);
+	}).catch(function() {
+	  console.log("Booo");
+	});
+	
 }
+
+
+
+
 
 
 function queryTicker(callback)
