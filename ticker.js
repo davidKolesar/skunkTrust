@@ -24,6 +24,5 @@ function queryTicker(callback)
 	  	}
 	xhr.open("GET", "https://cors-anywhere.herokuapp.com/" + tickerEndpoint);
 	xhr.setRequestHeader("Accept", 'application/json');
-    var test = xhr.send();
-	console.log(JSON.parse(test));
+    xhr.send();
 }
