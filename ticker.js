@@ -8,12 +8,13 @@ function activateTicker() {
 // pre ES6 way to perform GET request in JS
 function queryTicker(callback)
 {	
-	var tickerEndpoint = "https://api.alternative.me/v2/ticker/?convert=EUR"
+	var tickerEndpoint = "https://api.alternative.me/v2/ticker/?convert=DOL"
 	let xhr = new XMLHttpRequest();
 	
 	xhr.onreadystatechange = function(callback) {
 		if (this.readyState === 4 && this.status === 200) {
 		  var response = JSON.parse(this.responseText);
+			//handles asnyc xhr call
 			if(response !== undefined) {
 				tickerData = response;	
 			}
