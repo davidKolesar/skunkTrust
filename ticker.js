@@ -14,7 +14,7 @@ function activateTicker() {
 function queryTicker(callback)
 {	
 	console.log('connected to ticker');
-	var tickerEndpoint = "https://api.alternative.me/v2/ticker/"
+	var tickerEndpoint = "https://api.alternative.me/v2/ticker/?convert=EUR"
     var jsonResponse;
 	var xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function() { 
