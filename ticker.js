@@ -24,3 +24,6 @@ function queryTicker(callback)
 	xhr.setRequestHeader("Accept", 'application/json');
 	tickerData = xhr.send();
 }
+
+
+//access by tickerData.data[1].quotes.USD
