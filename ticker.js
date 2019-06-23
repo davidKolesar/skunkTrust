@@ -18,7 +18,7 @@ function queryTicker(callback)
 	xhr.onreadystatechange = function() {
 		if (this.readyState === 4 && this.status === 200) {
 		  let response = JSON.parse(this.responseText);
-		  callback(response);    }
+		 console.log(response);    }
 	  	}
 	xhr.open("GET", "https://cors-anywhere.herokuapp.com/" + tickerEndpoint);
 	xhr.setRequestHeader("Accept", 'application/json');
