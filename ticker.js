@@ -1,6 +1,6 @@
 //ES6 method to to GET requests
 function activateTicker() {
-	var url = "https://api.alternative.me/v2/ticker/?convert=EUR";
+	var url = "https://api.cryptowat.ch/markets/summaries";
 	fetch(url).then(function(response) {
 	  return response.json();
 	}).then(function(data) {
