@@ -15,11 +15,11 @@ function queryTicker()
 		if (this.readyState === 4 && this.status === 200) {
 		  var response = JSON.parse(this.responseText);
 			console.log(response);
-			tickerData = response;
-		}
+			return response;
 	  	}
 	xhr.open("GET", "https://cors-anywhere.herokuapp.com/" + tickerEndpoint);
 	xhr.setRequestHeader("Accept", 'application/json');
-    xhr.send();
+	tickerData = xhr.send();
+ 
 }
 
