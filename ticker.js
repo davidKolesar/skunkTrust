@@ -2,6 +2,7 @@ var tickerData = "";
 
 function activateTicker() {
 	queryTicker();
+	return tickerData;
 }
 
 
