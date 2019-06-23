@@ -6,7 +6,7 @@ function activateTicker() {
 	
 	//send request to ticker API
 	var response = queryTicker(callback);
-		if (jsonResponse !== 'undefined' ) {
+		if (jsonResponse !== undefined ) {
 			console.log(JSON.parse(jsonResponse));
 		}
 }
