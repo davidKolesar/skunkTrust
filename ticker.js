@@ -1,13 +1,15 @@
 //ES6 method to to GET requests
 function activateTicker() {
-	var url = "https://api.cryptowat.ch/markets/summaries";
-	fetch(url).then(function(response) {
-	  return response.json();
-	}).then(function(data) {
-	  console.log(data);
-	}).catch(function() {
-	  console.log("Unable to retrieve ticker data -- ticker server is down.");
-	});
+	var url = "https://api.alternative.me/v2/ticker/?convert=EUR";
+	var http_request;
+http_request = new XMLHTTPRequest();
+http_request.onreadystatechange = function () { /* .. */ };
+http_request.open("GET", url);
+http_request.withCredentials = true;
+http_request.setRequestHeader("Content-Type", "application/json");
+var response = http_request.send({ 'request': "authentication token" });
+
+	console.log(JSON.parse(response));
 }
 
 
@@ -31,3 +33,5 @@ function queryTicker(callback)
     xmlHttp.open("GET", tickerEndpoint, true); // boolean for asynchronous 
     xmlHttp.send(null);
 }
+
+//endpoints to consider: https://api.cryptowat.ch/markets/summaries
