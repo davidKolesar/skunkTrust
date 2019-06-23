@@ -6,9 +6,10 @@ function activateTicker() {
 	
 	//send request to ticker API
 	var response = queryTicker(callback);
-	console.log(response);
+		if (jsonResponse !== 'undefined' ) {
+			console.log(JSON.parse(jsonResponse));
+		}
 }
-
 
 
 function queryTicker(callback)
@@ -20,7 +21,7 @@ function queryTicker(callback)
     xmlHttp.onreadystatechange = function() { 
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
           jsonResponse =  callback(xmlHttp.responseText);
-		console.log(JSON.parse(jsonResponse));
+			}
 	}
     xmlHttp.open("GET", tickerEndpoint, true); // boolean for asynchronous 
     xmlHttp.send(null);
