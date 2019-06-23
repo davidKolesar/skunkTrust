@@ -19,8 +19,9 @@ function queryTicker(callback)
     var jsonResponse;
 	var xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function() { 
-        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200){
           jsonResponse =  callback(xmlHttp.responseText);
+		}
 			}
 	}
     xmlHttp.open("GET", tickerEndpoint, true); // boolean for asynchronous 
