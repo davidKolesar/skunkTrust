@@ -24,7 +24,6 @@ function queryTicker(callback)
   xhr.setRequestHeader("Accept", 'application/json');
   xhr.send();
 }
-}
 
 //endpoints to consider: https://api.cryptowat.ch/markets/summaries
 
