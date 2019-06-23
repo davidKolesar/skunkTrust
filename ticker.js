@@ -4,7 +4,7 @@ function activateTicker() {
  		console.log(retVal);
     }
 
-	var url = https://api.alternative.me/v2/ticker/?convert=EUR;
+	var url = "https://api.alternative.me/v2/ticker/?convert=EUR";
 	
 	fetch(url).then(function(response) {
 	  return response.json();
