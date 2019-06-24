@@ -10,55 +10,68 @@
 		<title>SkunkTrust</title>
 
 		<link rel="canonical" href="https://www.google.com">
-
 		<!-- Bootstrap core CSS -->
 		<link href="./homePage_files/bootstrap.min.css" rel="stylesheet">
-
 		<!-- Custom styles for this template -->
 		<link href="./homePage_files/cover.css" rel="stylesheet">
 	</head>
 
-  <body class="text-center">
+	<body class="text-center">
+		<!-- check if JavaScript is enabled -->
+		<noscript>
+			<p>For the best user experience with our site, we encourage you to enable JavaScript. </p>
+		</noscript>
 
-	 
-	<script type="text/javascript"  src="ticker.js"></script>
-		<script>
-			activateTicker();
-		</script>
-	  
-    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
-      <header class="masthead mb-auto">
-        <div class="inner">
-          <h3 class="masthead-brand">Skunk Trust</h3>
-          <nav class="nav nav-masthead justify-content-center">
-            <a class="nav-link active" href="https://www.google.com">Home</a>
-            <a class="nav-link" href="https://www.google.com">Login</a>
-			<a class="nav-link" href="https://www.google.com">Sign Up</a>
-            <a class="nav-link" href="https://www.google.com">Contact Staff</a>
-          </nav>
-        </div>
-      </header>
+		<!-- Header -->
+		<div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+		  <header class="masthead mb-auto">
+			<div class="inner">
+			  <h3 class="masthead-brand">Skunk Trust</h3>
+			  <nav class="nav nav-masthead justify-content-center">
+				<a class="nav-link active" href="https://www.google.com">Home</a>
+				<a class="nav-link" href="https://www.google.com">Login</a>
+				<a class="nav-link" href="https://www.google.com">Sign Up</a>
+				<a class="nav-link" href="https://www.google.com">Contact Staff</a>
+			  </nav>
+				<!-- CryptoTicker -->
+				<marquee><p id="scrollingText"></p></marquee>
 
-      <main role="main" class="inner cover">
-        <h1 class="cover-heading">Lorem Ipsum</h1>
-        <p class="lead">Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <p class="lead">
-          <a href="https://www.google.com" class="btn btn-lg btn-secondary">consectetur</a>
-        </p>
-      </main>
+				<script type="text/javascript"  src="ticker.js"></script>
+				<script>
+					//retrieve data
+					activateTicker();
 
-      <footer class="mastfoot mt-auto">
-        <div class="inner">
-          <p>Made with <span style="color: #e25555;">&hearts;</span> by <a href="https://www.github.com/davidKolesar">David Kolesar</a>.</p>
-        </div>
-      </footer>
-    </div>
+					//concatenate data as desired string
+					var tickerDisplayData = displayData();
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="./homePage_files/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="./homePage_files/popper.min.js"></script>
-    <script src="./homePage_files/bootstrap.min.js"></script>
-</body></html>
+					//append data to DOM
+					document.getElementById("scrollingText").innerHTML = tickerDisplayData;
+				</script>
+			</div>
+		  </header>
+
+		  <main role="main" class="inner cover">
+			<h1 class="cover-heading">Lorem Ipsum</h1>
+			<p class="lead">Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+			<p class="lead">
+			  <a href="https://www.google.com" class="btn btn-lg btn-secondary">consectetur</a>
+			</p>
+		  </main>
+
+		  <footer class="mastfoot mt-auto">
+			<div class="inner">
+			  <p>Made with <span style="color: #e25555;">&hearts;</span> by <a href="https://www.github.com/davidKolesar">David Kolesar</a>.</p>
+			</div>
+		  </footer>
+		</div>
+
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Leave this at end of the body so the pages load faster -->
+		<script src="./homePage_files/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+		<script src="./homePage_files/popper.min.js"></script>
+		<script src="./homePage_files/bootstrap.min.js"></script>
+	</body>
+		
+</html>

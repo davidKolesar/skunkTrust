@@ -20,7 +20,8 @@ function queryTicker(callback)
 			//handles asnyc xhr call
 			if(response !== undefined) 
 			{
-				tickerData = response;	
+				tickerData = response;
+				displayData();
 			}
 		}
 	}
@@ -32,10 +33,12 @@ function queryTicker(callback)
 
 function displayData()
 {	
+	var displayData = "";
+	
 	//get the first 10 cryptoCurrencies
 	for(var i = 0; i < 9; i++) 
 	{
-		document.getElementById("tickerText").innerHTML = tickerData.data[i].name  + " : $" + tickerData.data[i].quotes.USD.price;
+		displayData = displayData + " --- " + document.getElementById("tickerText").innerHTML = tickerData.data[i].name  + " : $" + tickerData.data[i].quotes.USD.price;
 	}
-	
+	return displayData;
 }
