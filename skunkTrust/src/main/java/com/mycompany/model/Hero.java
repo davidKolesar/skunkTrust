@@ -40,6 +40,10 @@ public class Hero {
 		return weapon;
 	}
 
+	/**
+	 * @param name
+	 * @param damage
+	 */
 	public void setWeapon(String name, Integer damage) {
 		weapon.put(name, damage);
 	}
