@@ -4,7 +4,8 @@ console.log("Oh! Look what you found!");
 //Remember, client-side validation is nothing more than a convenience to the user!
 function validateInput() {
 	var input = document.getElementById("input");
-	
+	//set it to empty
+	document.getElementById("input").value = "";
 	/*
 	 * Checks if values are "truthy." This includes checks for:
 	 * - null
@@ -17,6 +18,7 @@ function validateInput() {
 	if(input){
 		sendJSON(input);
 	}
+	
 }
 
 function sendJSON(input) {
@@ -66,3 +68,10 @@ function sendJSON(input) {
 }
 
 
+/*Validate input (frontend)
+Ensure that the data conforms to what you expect before submission
+Sanitize input (backend)
+Employ means on the backend to escape or remove unsafe characters before it reaches your application's storage layer
+Escape output (backend)
+As an additional safety measure, before outputting, be sure to escape anything coming from a 3rd party source
+*/
