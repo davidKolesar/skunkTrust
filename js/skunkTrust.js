@@ -1,18 +1,23 @@
+console.log("Oh! Look what you found!");
+
+
+//Remember, client-side validation is nothing more than a convenience to the user!
 function validateInput() {
 	var input = document.getElementById("input");
 	
 	/*
-	*Checks if values are "truthy." This includes checks for:
-	* - null
-	* - undefined
-	* - NaN
-	* - empty string ("")
-	* - 0
-	* - false
-	*/
+	 * Checks if values are "truthy." This includes checks for:
+	 * - null
+	 * - undefined
+	 * - NaN
+	 * - empty string ("")
+	 * - 0
+	 * - false
+	 */
 	if(input){
 		sendJSON(input);
 	}
+}
 
 function sendJSON(input) {
 	
@@ -21,12 +26,13 @@ function sendJSON(input) {
 	* 1.5 client-side validation is performed
 	* 2. Serialize it as JSON
 	* 3. Send it to endpoint (serverside)
-	* 4. Input gets sent to console IO (server-side validation)
+	* 4. Input gets sent to console IO (server-side validation / Sanitation)
 	* 5. Gameplay business logic executed
 	* 6. Response it output to terminal
 	* 7. Terminal is refreshed
 	*/
-	
+	console.log(input);
+	alert(input);
 	
 	        var restEndpoint
             let result = document.querySelector('.result'); 
