@@ -54,6 +54,15 @@
 				<div>
 					<input type="text" class="form-control" id="input" style="background-color:Black; color:Lime;  font-size: 10pt">
 					<button id="terminalReturn" style="visibility: hidden;"; onclick="sendJSON()">return</button>
+					<script>
+					var input = document.getElementById("input");
+					input.addEventListener("keyup", function(event) {
+					  if (event.keyCode === 13) {
+					  event.preventDefault();
+					   document.getElementById("terminalReturn").click();
+					  }
+					});
+					</script>
 		  
 				</div>
 			</div>
