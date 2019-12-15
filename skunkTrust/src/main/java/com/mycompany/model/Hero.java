@@ -1,12 +1,15 @@
 package com.mycompany.model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Hero {
 
 	private String name;
 	private int hitPoints;
 	private int armor;
+	private Map<String, Integer> weapon = new HashMap<String, Integer>();
 	private ArrayList<Item> items;
 	
 	public String getName() {
@@ -31,6 +34,14 @@ public class Hero {
 	
 	public void setArmor(int armor) {
 		this.armor = armor;
+	}
+	
+	public Map<String, Integer> getWeapon() {
+		return weapon;
+	}
+
+	public void setWeapon(String name, Integer damage) {
+		weapon.put(name, damage);
 	}
 	
 	public ArrayList<Item> getItems() {
