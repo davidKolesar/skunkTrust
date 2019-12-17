@@ -20,7 +20,7 @@ async function demo() {
     var currentStory = "";
 	
   // Sleep in loop
-  for (int i = 0; i < output.length; i++) {
+  for (var i = 0; i < output.length; i++) {
 	currentStory = currentStory + output[i];
 	await sleep(50);
 	document.getElementById("output").value = currentStory;
