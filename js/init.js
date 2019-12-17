@@ -30,7 +30,7 @@ function sleep(ms) {
 }
 
 async function demo() {
-	var story = "I wish Jenn didn't hit me in the head with a pillow. It was quite inappropriate!"
+	var story = "S K U N K T R U S T"
 	var twoSeconds = 2000;
 	var output = story.split('');
     var currentStory = "";
@@ -39,7 +39,8 @@ async function demo() {
   // Sleep in loop
   for (var i = 0; i < output.length; i++) {
 	currentStory = currentStory + output[i];
-	await sleep(50);
+	await sleep(100);
+	type.play();
 	type.play();
 	document.getElementById("output").value = currentStory;
   }
