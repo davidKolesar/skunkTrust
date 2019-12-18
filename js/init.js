@@ -29,7 +29,7 @@ function sleep(ms) {
 }
 
 async function demo() {
-	var story = "S K U N K T R U S T"
+	var story = "S K U N K T R U S T -- Type 'start' to begin."
 	var twoSeconds = 2000;
 	var output = story.split('');
     var currentStory = "";
