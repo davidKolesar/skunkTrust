@@ -1,4 +1,3 @@
-alert("init connected");
 document.getElementById("output").value = "SKUNKTRUST";
 
 
