@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="Good Luck" content="">
+		<meta name="David Kolesar" content="">
+		<link rel="icon" href="https://getbootstrap.com/docs/4.0/assets/img/favicons/favicon.ico">
+
+		<title>SkunkTrust</title>
+
+		<link rel="canonical" href="https://www.google.com">
+		<!-- Bootstrap core CSS -->
+		<link href="./homePage_files/bootstrap.min.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+		<link href="./homePage_files/cover.css" rel="stylesheet">
+		<!-- external .js for input handling -->
+		<script src="js/skunkTrust.js"></script>  
+	</head>
+
+	<body class="text-center">
+		<!-- check if JavaScript is enabled -->
+		<noscript>
+			<p>For the best user experience with our site, we encourage you to enable JavaScript. </p>
+		</noscript>
+
+		<!-- Header -->
+		<div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+		  <header class="masthead mb-auto">
+			<div class="inner">
+			  <h3 class="masthead-brand">Skunk Trust</h3>
+			  <nav class="nav nav-masthead justify-content-center">
+				<a class="nav-link active" href="https://www.google.com">Home</a>
+				<a class="nav-link" href="https://www.google.com">Login</a>
+				<a class="nav-link" href="https://www.google.com">Sign Up</a>
+				<a class="nav-link" href="https://www.google.com">Contact Staff</a>
+			  </nav>
+			</div>
+		  </header>
+		<br>
+		<br>
+		<br>
+		  <main role="main" class="inner cover">
+		  
+		  <div class="col-sm-12">
+		  <div class="container">
+			<div>
+				<textarea class="form-control" rows="20" id="output" disabled="disabled" value="This is a test" style="background-color: Black; color:Lime;  font-size: 10pt"></textarea>
+
+			</div>
+		</div>
+		  </div>
+		  <div class="col-sm-12">
+		  <div class="container">	
+				<div>
+					<input type="text" class="form-control" id="input" style="background-color:Black; color:Lime;  font-size: 10pt">
+					<button id="terminalReturn" style="visibility: hidden;"; onclick="validateInput()">return</button>
+					<script>
+					var input = document.getElementById("input");
+					input.addEventListener("keyup", function(event) {
+					  if (event.keyCode === 13) {
+					  event.preventDefault();
+					   document.getElementById("terminalReturn").click();
+					  }
+					});
+					document.getElementById("input").value = "";
+					</script>
+		  
+				</div>
+			</div>
+			</div>
+			  </main>
+		  <footer class="mastfoot mt-auto">
+			<div class="inner">
+			  <p>Made with <span style="color: #e25555;">&hearts;</span> by <a href="https://www.github.com/davidKolesar">David Kolesar</a>.</p>
+			</div>
+		  </footer>
+		</div>
+		<script src="js/init.js"></script> 
+		<script src="./homePage_files/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+		<script src="./homePage_files/popper.min.js"></script>
+		<script src="./homePage_files/bootstrap.min.js"></script>
+	</body>
+		
+</html>

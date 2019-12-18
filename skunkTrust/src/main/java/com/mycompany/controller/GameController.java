@@ -13,4 +13,6 @@ public class GameController {
     return name;
   }
 
+  //post request here is what was sent from terminal
+  
 }
