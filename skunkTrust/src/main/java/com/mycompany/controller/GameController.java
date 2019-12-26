@@ -10,6 +10,7 @@ public class GameController {
 
   @PostMapping("/gameController")
   public String takeInput(String input) {
+	System.out.println(input);
     return "Hello front-end!";
   }
 
