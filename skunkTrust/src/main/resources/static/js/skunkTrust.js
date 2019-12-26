@@ -1,6 +1,5 @@
 console.log("Oh! Look what you found!");
 
-
 //Remember, client-side validation is nothing more than a convenience to the user!
 function validateInput() {
 	var input = document.getElementById("input");
@@ -30,29 +29,22 @@ function sendJSON(input) {
 	* 5. Gameplay business logic executed
 	* 6. Response it output to terminal
 	* 7. Terminal is refreshed
-*/	
-				
-					var http = new XMLHttpRequest();
-					var url = 'skunktrust/gameController';
-					var params = input;
-					http.open('POST', url, true);
+	*/	
+	var http = new XMLHttpRequest();
+	var url = 'skunktrust/gameController';
+	var params = input;
+	http.open('POST', url, true);
 
-					//Send the proper header information along with the request
-					http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+	//Send the proper header information along with the request
+	http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
-					http.onreadystatechange = function() {//Call a function when the state changes.
-						if(http.readyState == 4 && http.status == 200) {
-							alert(http.responseText);
-						}
-					}
-					http.send(params);
-					}
+	http.onreadystatechange = function() {//Call a function when the state changes.
+		if(http.readyState == 4 && http.status == 200) 
+		{
+			alert(http.responseText);
+		}
+	}
+	
+	http.send(params);
+}
 
-
-/*Validate input (frontend)
-Ensure that the data conforms to what you expect before submission
-Sanitize input (backend)
-Employ means on the backend to escape or remove unsafe characters before it reaches your application's storage layer
-Escape output (backend)
-As an additional safety measure, before outputting, be sure to escape anything coming from a 3rd party source
-*/
