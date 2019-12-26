@@ -14,9 +14,15 @@ public class GameController {
 		    
 	@PostMapping("/gameController")
 	public String takeInput(String input) {
-		//sanitize data
 		
-		System.out.println(input);
+		//sanitize data
+		String sanitizedResponse = consoleIo.sanitizeString(input);
+		
+		if(sanitizedResponse != input) 
+		{
+			return sanitizedResponse;
+		}
+		
 		return "Hello front-end!";
   }
 

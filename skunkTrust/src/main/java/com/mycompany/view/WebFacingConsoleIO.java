@@ -18,12 +18,14 @@ import java.util.Scanner;
  * @author David Kolesar
  * 25DEC2019
  */
-public class WebFacingConsoleIO {
+public class WebFacingConsoleIO 
+{
 
 	String invalidInput = "I don't understand what you mean by ";
 	int attackAttempts = 0;
 	
-	   public String sanitizeString(String input) {
+	   public String sanitizeString(String input) 
+	   {
 		   //make all chars lowercase
 		   input.toLowerCase();
 		   
@@ -34,45 +36,55 @@ public class WebFacingConsoleIO {
 				   input.contains(";") ||
 				   input.contains("*") ||
 				   input.contains("if") ||
-				   input.contains("''") ||
-				   input.contains("=") ||
 				   input.contains("+") ||
 				   input.contains("||") ||
 				   input.contains("concat") ||
-				   input.contains("'") ||
-				   input.contains("\"") ||
 				   input.contains("admin")|| 
 				   input.contains("order") ||
 				   input.contains("insert"))
 		   {
-
-			   if(attackAttempts == 0) 
-			   {
-				   return "Ah, SQL Injection? Clever, but not clever enough!“\n Don't try to attack our server, or there will be consequences.";      
-			   }
+			   return warnHackers("SQL Injection");
+		   }			   
 			   
-			   if(attackAttempts == 1) 
-			   {
-				   return "Didn't I just warn you? Don't do it again!";      
-			   }
-
-			   if(attackAttempts == 2) 
-			   {
-				   return "If you attack us, we'll attack back!";      
-			   }
+		   //Check for XSS
+		   if(input.contains("'") ||
+			input.contains("\"") ||
+			input.contains("<") ||
+			input.contains("=")) 
+			{
+			   return warnHackers("XSS");				   
+			} 
 			   
-			   
-		   }
-		   
-		   if(input.contains("NaN"))
+		   //Null checks
+		   if(	input.contains("null") || 
+				input.contains("") )
 		   {
-			   return invalidInput + "NaN";
+			   return invalidInput + input;
 		   }
 		   
 	       return input;
 	   }
 
-	
+public String warnHackers(String attackType) {
+
+	if(attackAttempts == 0) 
+	   {
+		   return "Ah," + attackType + "? Clever, but not clever enough!“\n Don't try to attack our server, or there will be consequences.";      
+	   }
+	   
+	   if(attackAttempts == 1) 
+	   {
+		   return "Didn't I just warn you? Don't do it again!";      
+	   }
+
+	   if(attackAttempts == 2) 
+	   {
+		   return "Here in SkunkTrust, we'll attack back!";      
+	   }
+	return "";
+}
+	   
+	   
    public int getInt(String prompt) {
 
        Scanner sc = new Scanner(System.in);
