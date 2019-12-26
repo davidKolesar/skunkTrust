@@ -1,6 +1,8 @@
 package com.mycompany.controller;
 
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,9 +14,11 @@ public class GameController {
 
 	private WebFacingConsoleIO consoleIo = new WebFacingConsoleIO();
 		    
-	@PostMapping("/gameController")
-	public String takeInput(String input)
+	@PostMapping(value = "/gameController")
+	public String takeInput(@RequestBody String input)
 	{
+		
+		input = input.replace("=", "");
 	
 		System.out.println("This is your input : " + input);
 		//sanitize data

@@ -37,8 +37,6 @@ function sendJSON(input) {
 	*/	
 	var http = new XMLHttpRequest();
 	var url = 'skunktrust/gameController';
-	var params = input;
-	console.log("Here's your input: " + params);
 	http.open('POST', url, true);
 
 	//Send the proper header information along with the request
@@ -51,7 +49,7 @@ function sendJSON(input) {
 		}
 	}
 	
-	http.send(params);
+	http.send(input);
 	
 }
 
