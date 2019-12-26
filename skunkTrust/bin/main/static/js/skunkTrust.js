@@ -15,12 +15,9 @@ function validateInput() {
 	 * - 0
 	 * - false
 	 */
-	if(input){
-		sendJSON(input);
-	}
-	
 }
 
+/*
 function sendJSON(input) {
 	
 	/*
@@ -32,7 +29,7 @@ function sendJSON(input) {
 	* 5. Gameplay business logic executed
 	* 6. Response it output to terminal
 	* 7. Terminal is refreshed
-	*/
+	
 	console.log(input);
 	alert(input);
 	
@@ -65,7 +62,7 @@ function sendJSON(input) {
   
             // Sending data with the request 
             xhr.send(data); 
-}
+}/*
 
 
 /*Validate input (frontend)
