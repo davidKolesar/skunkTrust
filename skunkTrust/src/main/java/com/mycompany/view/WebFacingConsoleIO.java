@@ -21,6 +21,7 @@ import java.util.Scanner;
 public class WebFacingConsoleIO {
 
 	String invalidInput = "I don't understand what you mean by ";
+	int attackAttempts = 0;
 	
 	   public String sanitizeString(String input) {
 		   //make all chars lowercase
@@ -45,7 +46,22 @@ public class WebFacingConsoleIO {
 				   input.contains("insert"))
 		   {
 
-			   return "Ah, SQL Injection? Clever, but not clever enough!";   
+			   if(attackAttempts == 0) 
+			   {
+				   return "Ah, SQL Injection? Clever, but not clever enough!“\n Don't try to attack our server, or there will be consequences.";      
+			   }
+			   
+			   if(attackAttempts == 1) 
+			   {
+				   return "Didn't I just warn you? Don't do it again!";      
+			   }
+
+			   if(attackAttempts == 2) 
+			   {
+				   return "If you attack us, we'll attack back!";      
+			   }
+			   
+			   
 		   }
 		   
 		   if(input.contains("NaN"))
