@@ -2,7 +2,7 @@ console.log("Oh! Look what you found!");
 
 //Remember, client-side validation is nothing more than a convenience to the user!
 function validateInput() {
-	var input = document.getElementById("input");
+	var input = document.getElementById("input").value;
 	/*
 	 * Checks if values are "truthy." This includes checks for:
 	 * - null
@@ -34,7 +34,8 @@ function sendJSON(input) {
 	*/	
 	var http = new XMLHttpRequest();
 	var url = 'skunktrust/gameController';
-	var params = input;
+	var params = "" +  input;
+	console.log("Here's your input dude : " + params);
 	http.open('POST', url, true);
 
 	//Send the proper header information along with the request

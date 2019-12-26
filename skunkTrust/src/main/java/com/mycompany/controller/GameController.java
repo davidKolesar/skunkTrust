@@ -13,8 +13,10 @@ public class GameController {
 	private WebFacingConsoleIO consoleIo = new WebFacingConsoleIO();
 		    
 	@PostMapping("/gameController")
-	public String takeInput(String input) {
-		
+	public String takeInput(String input)
+	{
+	
+		System.out.println("This is your input : " + input);
 		//sanitize data
 		String sanitizedResponse = consoleIo.sanitizeString(input);
 		
