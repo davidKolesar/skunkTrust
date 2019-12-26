@@ -4,16 +4,21 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mycompany.view.WebFacingConsoleIO;
+
 @RestController
 @RequestMapping("/skunktrust")
 public class GameController {
 
-  @PostMapping("/gameController")
-  public String takeInput(String input) {
-	System.out.println(input);
-    return "Hello front-end!";
+	private WebFacingConsoleIO consoleIo = new WebFacingConsoleIO();
+		    
+	@PostMapping("/gameController")
+	public String takeInput(String input) {
+		//sanitize data
+		
+		System.out.println(input);
+		return "Hello front-end!";
   }
 
-  //post request here is what was sent from terminal
   
 }

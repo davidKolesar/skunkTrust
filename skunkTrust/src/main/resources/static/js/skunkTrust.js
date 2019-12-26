@@ -14,7 +14,11 @@ function validateInput() {
 	 * - 0
 	 * - false
 	 */
-	  sendJSON(input);
+	 if(input)
+	 {
+		sendJSON(input);
+	 }
+	 
 }
 
 
