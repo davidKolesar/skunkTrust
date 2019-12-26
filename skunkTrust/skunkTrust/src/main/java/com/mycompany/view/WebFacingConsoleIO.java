@@ -25,13 +25,7 @@ public class WebFacingConsoleIO
 	int attackAttempts = 0;
 	
 	   public String sanitizeString(String input) 
-	   {		   
-		   //Null checks
-		   if( input == null)
-		   {
-			   return invalidInput + input;
-		   }
-		   
+	   {
 		   //make all chars lowercase
 		   input.toLowerCase();
 		   
@@ -61,6 +55,13 @@ public class WebFacingConsoleIO
 			   return warnHackers("XSS");				   
 			} 
 			   
+		   //Null checks
+		   if(	input.contains("null") || 
+				input.contains("") )
+		   {
+			   return invalidInput + input;
+		   }
+		   
 	       return input;
 	   }
 

@@ -3,8 +3,6 @@ console.log("Oh! Look what you found!");
 //Remember, client-side validation is nothing more than a convenience to the user!
 function validateInput() {
 	var input = document.getElementById("input");
-	//set it to empty
-	document.getElementById("input").value = "";
 	/*
 	 * Checks if values are "truthy." This includes checks for:
 	 * - null
@@ -50,5 +48,8 @@ function sendJSON(input) {
 	}
 	
 	http.send(params);
+	
+	//set input to empty
+	document.getElementById("input").value = "";
 }
 
