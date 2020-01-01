@@ -1,6 +1,5 @@
 package com.mycompany.controller;
 
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,8 +16,12 @@ public class GameController {
 	@PostMapping(value = "/gameController")
 	public String takeInput(@RequestBody String input)
 	{
-		//these is a temporary garbage fix. 
+
+		System.out.println("This is your unfixed input : " + input);
+		
+		//this is a temporary garbage fix. 
 		input = input.replace("=", "");
+		input = input.replace("+", " ");
 		
 		System.out.println("This is your input : " + input);
 		//sanitize data
