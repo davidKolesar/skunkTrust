@@ -20,6 +20,8 @@ public class GameController {
 		//fixing marshaling 
 		input = input.replace("=", "");
 		input = input.replace("+", " ");
+		input = input.replace("%", " ");
+
 		
 		//sanitize data
 		String sanitizedResponse = consoleIo.sanitizeString(input);
@@ -28,11 +30,7 @@ public class GameController {
 		{
 			return sanitizedResponse;
 		}
-
-		
-		
 		
 		return input;
   }
-  
 }

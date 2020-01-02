@@ -22,6 +22,7 @@ function validateInput() {
 	 
 }
 
+
 function sendJSON(input) {
 	
 	/*
@@ -48,7 +49,8 @@ function sendJSON(input) {
 		}
 	}
 	
-	var returnValue = http.send(input);
-	document.getElementById("output").value = returnValue;
-	
+	var response = http.send(input);
+	//can't get response to display on console
+	//response = document.getElementById("output").value;	
 }
+
