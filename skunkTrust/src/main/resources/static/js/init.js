@@ -19,18 +19,17 @@ function sound(src) {
 }
 
 
-/*There's no true sleep in JavaScript as of 2019, you'll have to do it this way.
-*
+/**
+*There's no true sleep in JavaScript as of 2019, you'll have to do it this way.
 *What you can probably do is set your paragraphs as char arrays and have them go through the loop
-*
 */
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function demo() {
+async function executeSleep() {
 	var story = "S K U N K T R U S T -- Type 'start' to begin."
-	var twoSeconds = 2000;
+	var oneSecond = 1000;
 	var output = story.split('');
     var currentStory = "";
 	var type = new sound("sounds/console.mp3");
@@ -40,9 +39,8 @@ async function demo() {
 	currentStory = currentStory + output[i];
 	await sleep(100);
 	type.play();
-	type.play();
 	document.getElementById("output").value = currentStory;
   }
 }
 
-demo();
+executeSleep();

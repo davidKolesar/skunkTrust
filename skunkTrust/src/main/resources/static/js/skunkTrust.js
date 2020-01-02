@@ -46,7 +46,6 @@ function sendJSON(input) {
 		if(http.readyState == 4 && http.status == 200) 
 		{
 				document.getElementById("output").value = http.responseText;
-
 		}
 	}
 	

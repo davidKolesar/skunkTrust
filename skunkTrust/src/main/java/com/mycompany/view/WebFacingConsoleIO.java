@@ -10,7 +10,9 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -371,8 +373,8 @@ public String warnHackers(String attackType) {
    }
    
    
-   public void printASCIIArt(String textToDisplay) {
-   	
+   public List<String> printASCIIArt(String textToDisplay) {
+   	List<String> artLines = new ArrayList<String>();
    	int allColors = -16777216;
    	int width = 100;
        int height = 30;
@@ -398,8 +400,9 @@ public String warnHackers(String attackType) {
                continue;
            }
 
-           System.out.println(stringBuilder);
+           artLines.add(stringBuilder.toString().trim());
        }
+       	return artLines;
    }
    
    public void clearScreen() {
