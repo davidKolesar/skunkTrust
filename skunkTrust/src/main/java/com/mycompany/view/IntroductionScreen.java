@@ -2,24 +2,10 @@ package com.mycompany.view;
 
 public class IntroductionScreen {
 	
-	
-	public String initGame(String input) {
-
-		if (input == "start") {
-			return displayOptionScreen();
-		} else {
-			return "Type 'start' to begin.";
-		}
-
-	}
-
-	private String displayOptionScreen() {
-	
-		
-		
-		
-		
-		return "skunkTrust Options	";
+	public String displayOptionScreen() {	
+		return "skunkTrust Options:	\\n 1. Start Game"
+								+ "\\n 2. Load Game"
+								+ "\\n 3. Set Difficulty";
 	}
 
 }

@@ -36,7 +36,9 @@ public class GameController {
 
 		if (!gameStarted) {
 			if(input.contentEquals("start")) {				
-				return introductionScreen.initGame(input);	
+				return introductionScreen.displayOptionScreen();	
+			} else {
+				return "Type 'start' to begin.";
 			}
 		}
 

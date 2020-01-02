@@ -23,6 +23,12 @@ function validateInput() {
 }
 
 
+function handleOutput(output) {
+	
+	
+	
+}
+
 function sendJSON(input) {
 	
 	/*
