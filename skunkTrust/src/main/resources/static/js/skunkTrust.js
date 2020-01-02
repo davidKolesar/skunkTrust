@@ -45,7 +45,8 @@ function sendJSON(input) {
 	http.onreadystatechange = function() {//Call a function when the state changes.
 		if(http.readyState == 4 && http.status == 200) 
 		{
-			alert(http.responseText);
+				document.getElementById("output").value = http.responseText;
+
 		}
 	}
 	

@@ -12,7 +12,10 @@ import com.mycompany.view.WebFacingConsoleIO;
 public class GameController {
 
 	private WebFacingConsoleIO consoleIo = new WebFacingConsoleIO();
-		    
+	private boolean gameStarted = false;	
+	private String output= "";	
+	
+	
 	@PostMapping(value = "/gameController")
 	public String takeInput(@RequestBody String input)
 	{
@@ -31,6 +34,9 @@ public class GameController {
 			return sanitizedResponse;
 		}
 		
-		return input;
+		
+		
+		
+		return output;
   }
 }
