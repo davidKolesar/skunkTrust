@@ -16,14 +16,11 @@ public class GameController {
 	@PostMapping(value = "/gameController")
 	public String takeInput(@RequestBody String input)
 	{
-
-		System.out.println("This is your unfixed input : " + input);
 		
-		//this is a temporary garbage fix. 
+		//fixing marshaling 
 		input = input.replace("=", "");
 		input = input.replace("+", " ");
 		
-		System.out.println("This is your input : " + input);
 		//sanitize data
 		String sanitizedResponse = consoleIo.sanitizeString(input);
 		
@@ -37,6 +34,5 @@ public class GameController {
 		
 		return input;
   }
-
   
 }

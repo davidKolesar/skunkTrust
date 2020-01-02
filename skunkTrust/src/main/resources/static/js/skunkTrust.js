@@ -49,7 +49,8 @@ function sendJSON(input) {
 		}
 	}
 	
-	http.send(input);
-	
+	var response = http.send(input);
+	//can't get response to display on console
+	//response = document.getElementById("output").value;	
 }
 
