@@ -22,7 +22,6 @@ function validateInput() {
 	 
 }
 
-
 function sendJSON(input) {
 	
 	/*

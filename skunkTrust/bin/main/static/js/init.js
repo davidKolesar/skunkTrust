@@ -29,7 +29,7 @@ function sleep(ms) {
 
 async function executeSleep() {
 	var story = "S K U N K T R U S T -- Type 'start' to begin."
-	var oneSecond = 1000;
+	var halfSecond = 50;
 	var output = story.split('');
     var currentStory = "";
 	var type = new sound("sounds/console.mp3");
@@ -37,8 +37,8 @@ async function executeSleep() {
   // Sleep in loop
   for (var i = 0; i < output.length; i++) {
 	currentStory = currentStory + output[i];
-	await sleep(100);
-	type.play();
+	await sleep(halfSecond);
+	//type.play(); sound disabled
 	document.getElementById("output").value = currentStory;
   }
 }

@@ -22,7 +22,7 @@ public class GameController {
 	@PostMapping(value = "/gameController")
 	public String takeInput(@RequestBody String input) {
 
-		// fixing marshaling
+		// fixing marshaling (hacky way)
 		input = input.replace("=", "");
 		input = input.replace("+", " ");
 		input = input.replace("%", " ");
@@ -36,6 +36,7 @@ public class GameController {
 
 		if (!gameStarted) {
 			if(input.contentEquals("start")) {				
+				gameStarted = true;
 				return introductionScreen.displayOptionScreen();	
 			} else {
 				return "Type 'start' to begin.";
