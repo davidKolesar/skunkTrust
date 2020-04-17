@@ -33,7 +33,8 @@ public class GameController {
 		if (sanitizedResponse != input) {
 			return sanitizedResponse;
 		}
-
+		
+		// starting game
 		if (!gameStarted) {
 			if(input.contentEquals("start")) {				
 				gameStarted = true;
@@ -42,7 +43,10 @@ public class GameController {
 				return "Type 'start' to begin.";
 			}
 		}
-
+		
+		
+		
 		return output;
+
 	}
 }
