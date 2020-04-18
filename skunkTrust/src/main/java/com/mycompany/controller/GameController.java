@@ -5,7 +5,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mycompany.model.Room;
+import com.mycompany.model.Hero;
+import com.mycompany.view.CreateRooms;
 import com.mycompany.view.IntroductionScreen;
 import com.mycompany.view.WebFacingConsoleIO;
 
@@ -15,9 +16,12 @@ public class GameController {
 
 	private WebFacingConsoleIO consoleIo = new WebFacingConsoleIO();
 	private IntroductionScreen introductionScreen = new IntroductionScreen();
+	private CreateRooms createRooms = new CreateRooms();
 	private boolean gameStarted = false;
 	private String output = "";
+	private Hero hero = new Hero();
 
+	
 	@PostMapping(value = "/gameController")
 	public String takeInput(@RequestBody String input) {
 
@@ -48,21 +52,37 @@ public class GameController {
 		return output;
 	}
 	
-	
+	public void initHero() {
+		
+		hero.setHitPoints(10);
+	}
 	
 
 	/**
 	 * @param sanitizedResponse
 	 */
-	public void startOpeningScene(String sanitizedResponse) {
-		boolean firstReading = true;
+	public String startOpeningScene(String sanitizedResponse) {
+		boolean isFirstReading = true;
+		boolean isLightsOff = true;
+		int stepsInDark = 0;
+		
 	
-		if(firstReading) {
+		if(isFirstReading) {
+			isFirstReading = false;
+			return createRooms.returnOpeningScene();
+		}
+		
+		if(isLightsOff) {
+			stepsInDark++;
+			return createRooms.returnLightsAreOff();
+		}
+		
+		if(stepsInDark == 2) {
 			
 		}
 		
+		return null;		
 	}
-	
 	
 	
 }

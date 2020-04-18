@@ -9,6 +9,7 @@ public class Hero {
 	private String name;
 	private int hitPoints;
 	private int armor;
+	private int totalPoints;
 	private Map<String, Integer> weapon = new HashMap<String, Integer>();
 	private ArrayList<Item> items;
 	
@@ -27,7 +28,19 @@ public class Hero {
 	public void setHitPoints(int hitPoints) {
 		this.hitPoints = hitPoints;
 	}
+	
+	public int getTotalPoints() {
+		return totalPoints;
+	}
 
+	public void setTotalPoints(int totalPoints) {
+		this.totalPoints = totalPoints;
+	}
+
+	public void addToTotalPoints(int pointsToAdd) {
+		this.totalPoints = this.totalPoints + pointsToAdd ;
+	}
+	
 	public int getArmor() {
 		return armor;
 	}
