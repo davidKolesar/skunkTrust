@@ -35,7 +35,7 @@ public class WebFacingConsoleIO
 		   }
 		   
 		   //make all chars lowercase
-		   input.toLowerCase();
+		   input = input.toLowerCase();
 		   
 		   //check for SQL injection
 		   if(input.contains("*") || 
