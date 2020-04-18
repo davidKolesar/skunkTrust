@@ -18,18 +18,13 @@ public class Room {
 	private Room southWest;
 
 	
-	// constructor
-    public Room(Room north, Room south, Room east, Room west, Room southEast, Room southWest, Room northEast, Room northWest) {
-    	this.north = north;
-    	this.south = south;
-    	this.east = east;
-    	this.west = west;
-    	this.southEast = southEast;
-    	this.southWest = southWest;
-    	this.northEast = northEast;
-    	this.northWest = northWest;	
-    	}
-	
+	/*
+	 * // constructor public Room(Room north, Room south, Room east, Room west, Room
+	 * southEast, Room southWest, Room northEast, Room northWest) { this.north =
+	 * north; this.south = south; this.east = east; this.west = west; this.southEast
+	 * = southEast; this.southWest = southWest; this.northEast = northEast;
+	 * this.northWest = northWest; }
+	 */
 	
 	public String getName() {
 		return name;

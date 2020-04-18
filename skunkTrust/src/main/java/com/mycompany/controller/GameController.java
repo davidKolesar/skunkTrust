@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mycompany.model.Hero;
+import com.mycompany.model.Room;
 import com.mycompany.view.CreateRooms;
 import com.mycompany.view.GameChallenges;
 import com.mycompany.view.IntroductionScreen;
@@ -23,7 +24,10 @@ public class GameController {
 	private Hero hero = new Hero();
 	private GameChallenges gameChallenges = new GameChallenges();
 	private boolean optionsScreen = false;
-
+	private String skunkTrustResponse;
+	private boolean isLightsOn;
+	private Room mikesRoom;
+	
 	@PostMapping(value = "/gameController")
 	public String takeInput(@RequestBody String input) {
 
@@ -33,14 +37,14 @@ public class GameController {
 		input = input.replace("%", " ");
 
 		// sanitize data
-		String sanitizedResponse = consoleIo.sanitizeString(input);
+		String sanitizedResponse = consoleIo.sanitizeString(input.toLowerCase());
 
 		if (sanitizedResponse != input) {
 			// Detects malicious queries in text field
 			return sanitizedResponse;
 		}
 
-		// first starting game
+		// Entering SkunkTrust 
 		if (!gameStarted) {
 			if (sanitizedResponse.contentEquals("start")) {
 				gameStarted = true;
@@ -59,6 +63,8 @@ public class GameController {
 			case "1":
 				optionResponse = "/n " + "Welcome to SkunkTrust";
 				optionsScreen = false;
+				mikesRoom = createRooms.createMikesRoom();
+				isLightsOn = false;
 				return createRooms.returnOpeningScene();
 			case "2":
 				optionResponse = "Please insert game code :";
@@ -67,27 +73,24 @@ public class GameController {
 			default:
 				optionResponse = "Please type either 1 or 2";
 				break;
-
 			}
 		}
 
 		// new game started
 		newGame(sanitizedResponse);
 
-		return sanitizedResponse;
+		return skunkTrustResponse ;
 	}
 
 	public void newGame(String sanitizedResponse) {
-
-		createRooms.createMikesRoom();
-		boolean lightsOn = false;
-
 		// check if user turns lights on
-		lightsOn = gameChallenges.areLightsTurnedOn(sanitizedResponse);
+		isLightsOn = gameChallenges.areLightsTurnedOn(sanitizedResponse);
 
-		if (!lightsOn) {
-			sanitizedResponse = gameChallenges.damageFromLightsOff(hero);
+		if (!isLightsOn) {
+			skunkTrustResponse = gameChallenges.damageFromLightsOff(hero);
 		}
+		
+		mikesRoom.getDescription()
 
 	}
 
