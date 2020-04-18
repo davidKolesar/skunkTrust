@@ -37,9 +37,9 @@ public class GameController {
 		input = input.replace("%", " ");
 
 		// sanitize data
-		String sanitizedResponse = consoleIo.sanitizeString(input.toLowerCase());
+		String sanitizedResponse = consoleIo.sanitizeString(input);
 
-		if (sanitizedResponse != input) {
+		if (sanitizedResponse != input.toLowerCase()) {
 			// Detects malicious queries in text field
 			return sanitizedResponse;
 		}
