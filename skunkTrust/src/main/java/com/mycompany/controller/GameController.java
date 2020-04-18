@@ -27,7 +27,8 @@ public class GameController {
 	private String skunkTrustResponse;
 	private boolean isLightsOn;
 	private Room mikesRoom;
-	
+	int lightsOffCount = 0;
+
 	@PostMapping(value = "/gameController")
 	public String takeInput(@RequestBody String input) {
 
@@ -84,7 +85,6 @@ public class GameController {
 
 	public void newGame(String sanitizedResponse) {
 		isLightsOn = gameChallenges.areLightsTurnedOn(sanitizedResponse);
-		int lightsOffCount = 0;
 		
 		if (!isLightsOn) {
 			skunkTrustResponse = createRooms.returnLightsAreOff();

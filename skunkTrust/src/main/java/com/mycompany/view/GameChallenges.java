@@ -20,7 +20,7 @@ public class GameChallenges {
 			hero.setHeroDead(true);
 			break;
 		case 2:
-			damageReport = "Fumbling in the dim room, you fall into the depths of a dirty laundry pile! You fumes render you unconscious. Your advaenture ends early.";
+			damageReport = "Fumbling in the dim room, you fall into the depths of a dirty laundry pile! The fumes render you unconscious. Your advaenture ends early.";
 			hero.setHeroDead(true);
 			break;
 		case 3:
@@ -34,7 +34,7 @@ public class GameChallenges {
 		}
 
 		if (hero.isHeroDead() == true) {
-			gameOverScreen(hero, damageReport);
+			damageReport = gameOverScreen(hero, damageReport);
 		}
 		return damageReport;
 	}
