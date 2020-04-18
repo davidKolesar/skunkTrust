@@ -7,6 +7,8 @@ public class Room {
 	private int id;
 	private Description description;
 	private ArrayList<Item> items;
+	private ArrayList<Room> rooms;
+	
 	
 	public String getName() {
 		return name;
@@ -31,5 +33,14 @@ public class Room {
 	}
 	public void setItems(ArrayList<Item> items) {
 		this.items = items;
-	}	
+	}
+	public ArrayList<Room> getRooms() {
+		return rooms;
+	}
+	public void setRooms(ArrayList<Room> rooms) {
+		this.rooms = rooms;
+	}
+	public void addRooms(Room room) {
+		this.rooms.add(room);
+	}
 }
