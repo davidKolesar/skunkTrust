@@ -37,7 +37,6 @@ public class GameChallenges {
 			gameOverScreen(hero, damageReport);
 		}
 		return damageReport;
-
 	}
 
 	public boolean areLightsTurnedOn(String sanitizedResponse) {
@@ -58,5 +57,4 @@ public class GameChallenges {
 				+ "Play Again? " + "/n";
 
 	}
-
 }

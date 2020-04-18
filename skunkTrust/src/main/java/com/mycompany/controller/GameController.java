@@ -84,11 +84,15 @@ public class GameController {
 	}
 
 	public void newGame(String sanitizedResponse) {
-		// check if user turns lights on
 		isLightsOn = gameChallenges.areLightsTurnedOn(sanitizedResponse);
-
+		int lightsOffCount = 0;
+		
 		if (!isLightsOn) {
-			skunkTrustResponse = gameChallenges.damageFromLightsOff(hero);
+			createRooms.returnLightsAreOff();
+			lightsOffCount++;
+			if(lightsOffCount >= 3) {
+				skunkTrustResponse = gameChallenges.damageFromLightsOff(hero);
+			}
 		} else {
 			skunkTrustResponse = mikesRoom.getDescription();			
 		}
