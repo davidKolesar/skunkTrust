@@ -25,7 +25,7 @@ public class Hero {
 		return hitPoints;
 	}
 	
-	public boolean isHeoDead() {
+	public boolean isHeroDead() {
 		return isHeroDead;
 	}
 

@@ -18,4 +18,9 @@ public class Dice {
 		return result;
 	}
 
+	public int roll(int low, int high) {
+		this.result = r.nextInt(high-low)+low;
+		return result;
+	}
+
 }

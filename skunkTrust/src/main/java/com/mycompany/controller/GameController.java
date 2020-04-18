@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.mycompany.model.Hero;
 import com.mycompany.view.CreateRooms;
+import com.mycompany.view.GameChallenges;
 import com.mycompany.view.IntroductionScreen;
 import com.mycompany.view.WebFacingConsoleIO;
 
@@ -20,8 +21,9 @@ public class GameController {
 	private boolean gameStarted = false;
 	private String output = "";
 	private Hero hero = new Hero();
+	private GameChallenges gameChallenges = new GameChallenges();
+	private boolean optionsScreen = false;
 
-	
 	@PostMapping(value = "/gameController")
 	public String takeInput(@RequestBody String input) {
 
@@ -34,55 +36,41 @@ public class GameController {
 		String sanitizedResponse = consoleIo.sanitizeString(input);
 
 		if (sanitizedResponse != input) {
+			// Detects malicious queries in text field
 			return sanitizedResponse;
 		}
-		
-		// starting game
+
+		// first starting game
 		if (!gameStarted) {
-			if(input.contentEquals("start")) {				
+			if (input.contentEquals("start")) {
 				gameStarted = true;
-				return introductionScreen.displayOptionScreen();	
+				optionsScreen = true;
+				return introductionScreen.displayOptionScreen();
 			} else {
 				return "Type 'start' to begin.";
 			}
 		}
-	
-		startOpeningScene(sanitizedResponse);
-		
-		return output;
-	}
-	
-	public void initHero() {
-		
-		hero.setHitPoints(10);
-	}
-	
 
-	/**
-	 * @param sanitizedResponse
-	 */
-	public String startOpeningScene(String sanitizedResponse) {
-		boolean isFirstReading = true;
-		boolean isLightsOff = true;
-		int stepsInDark = 0;
-		
-	
-		if(isFirstReading) {
-			isFirstReading = false;
-			return createRooms.returnOpeningScene();
+		if (optionsScreen) {
+			String optionResponse = "";
+
+			switch (sanitizedResponse) {
+			case "1":
+				optionResponse = "/n " + "Welcome to SkunkTrust";
+				optionsScreen = false;
+				break;
+			case "2":
+				optionResponse = "Please insert game code :";
+				optionsScreen = false;
+				break;
+			default:
+				optionResponse = "Please type either 1 or 2";
+				break;
+
+			}
+			return optionResponse;
 		}
-		
-		if(isLightsOff) {
-			stepsInDark++;
-			return createRooms.returnLightsAreOff();
-		}
-		
-		if(stepsInDark == 2) {
-			
-		}
-		
-		return null;		
+
+		return sanitizedResponse;
 	}
-	
-	
 }
