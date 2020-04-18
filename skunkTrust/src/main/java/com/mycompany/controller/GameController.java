@@ -51,6 +51,7 @@ public class GameController {
 			}
 		}
 
+		// allow user to select options
 		if (optionsScreen) {
 			String optionResponse = "";
 
@@ -58,7 +59,7 @@ public class GameController {
 			case "1":
 				optionResponse = "/n " + "Welcome to SkunkTrust";
 				optionsScreen = false;
-				break;
+				return createRooms.returnOpeningScene();
 			case "2":
 				optionResponse = "Please insert game code :";
 				optionsScreen = false;
@@ -68,9 +69,27 @@ public class GameController {
 				break;
 
 			}
-			return optionResponse;
 		}
-
+		
+		// new game started
+		newGame(sanitizedResponse);
+		
 		return sanitizedResponse;
 	}
+
+	public String newGame(String sanitizedResponse) {
+		boolean lightsOn = false;
+		
+		//check if user turns lights on
+		
+		if(optionsScreen) {
+		}
+		
+		createRooms.createMikesRoom();
+	
+		
+		
+		return "";
+	}
+
 }

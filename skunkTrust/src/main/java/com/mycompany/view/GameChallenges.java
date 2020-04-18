@@ -40,6 +40,10 @@ public class GameChallenges {
 
 	}
 
+	public String areLightsOn() {
+		
+	}
+	
 	public String gameOverScreen(Hero hero, String damageReport) {
 
 		return damageReport + "/n"
