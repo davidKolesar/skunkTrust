@@ -19,9 +19,8 @@ public class CreateRooms {
 
 	public Room createMikesRoom() {
 		// create room
-		//Room mikesRoom = new Room(null, null, null, null, null, null, null, null);
+		Room mikesRoom = new Room(null, null, null, null, null, null, null, null);
 
-		Room mikesRoom = new Room();
 		
 		// create bordering rooms?
 

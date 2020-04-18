@@ -57,21 +57,20 @@ public class GameController {
 
 		// allow user to select options
 		if (optionsScreen) {
-			String optionResponse = "";
 
 			switch (sanitizedResponse) {
 			case "1":
-				optionResponse = "/n " + "Welcome to SkunkTrust";
+				skunkTrustResponse = "/n " + "Welcome to SkunkTrust";
 				optionsScreen = false;
 				mikesRoom = createRooms.createMikesRoom();
 				isLightsOn = false;
 				return createRooms.returnOpeningScene();
 			case "2":
-				optionResponse = "Please insert game code :";
+				skunkTrustResponse  = "Please insert game code :";
 				optionsScreen = false;
 				break;
 			default:
-				optionResponse = "Please type either 1 or 2";
+				skunkTrustResponse  = "Please type either 1 or 2";
 				break;
 			}
 		}
@@ -90,7 +89,7 @@ public class GameController {
 			skunkTrustResponse = gameChallenges.damageFromLightsOff(hero);
 		}
 		
-		mikesRoom.getDescription()
+		skunkTrustResponse = mikesRoom.getDescription();
 
 	}
 

@@ -6,8 +6,8 @@ public class Room {
 	private String name;
 	private int id;
 	private String description;
-	private ArrayList<Item> items;
-	private ArrayList<Room> rooms;
+	private ArrayList<Item> items = new ArrayList();
+	private ArrayList<Room> rooms = new ArrayList();
 	private Room north;
 	private Room south;
 	private Room east;
@@ -18,13 +18,18 @@ public class Room {
 	private Room southWest;
 
 	
-	/*
-	 * // constructor public Room(Room north, Room south, Room east, Room west, Room
-	 * southEast, Room southWest, Room northEast, Room northWest) { this.north =
-	 * north; this.south = south; this.east = east; this.west = west; this.southEast
-	 * = southEast; this.southWest = southWest; this.northEast = northEast;
-	 * this.northWest = northWest; }
-	 */
+	// constructor
+    public Room(Room north, Room south, Room east, Room west, Room southEast, Room southWest, Room northEast, Room northWest) {
+    	this.north = north;
+    	this.south = south;
+    	this.east = east;
+    	this.west = west;
+    	this.southEast = southEast;
+    	this.southWest = southWest;
+    	this.northEast = northEast;
+    	this.northWest = northWest;	
+    	}
+	
 	
 	public String getName() {
 		return name;
