@@ -40,8 +40,8 @@ public class GameController {
 		String sanitizedResponse = consoleIo.sanitizeString(input);
 		
 		//checking for dection of errors
-		input = input.toLowerCase();
-		if (!sanitizedResponse.contentEquals(input)) {
+		//input = input.toLowerCase();
+		if (!sanitizedResponse.contentEquals(input.toLowerCase())) {
 			// Detects malicious queries in text field
 			return sanitizedResponse;
 		}
@@ -89,10 +89,9 @@ public class GameController {
 
 		if (!isLightsOn) {
 			skunkTrustResponse = gameChallenges.damageFromLightsOff(hero);
+		} else {
+			skunkTrustResponse = mikesRoom.getDescription();			
 		}
-		
-		skunkTrustResponse = mikesRoom.getDescription();
-
 	}
 
 }
