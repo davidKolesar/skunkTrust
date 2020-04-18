@@ -8,6 +8,27 @@ public class Room {
 	private Description description;
 	private ArrayList<Item> items;
 	private ArrayList<Room> rooms;
+	private Room north;
+	private Room south;
+	private Room east;
+	private Room west;
+	private Room northEast;
+	private Room northWest;
+	private Room southEast;
+	private Room southWest;
+
+	
+	// constructor
+    public Room(Room north, Room south, Room east, Room west, Room southEast, Room southWest, Room northEast, Room northWest) {
+    	this.north = north;
+    	this.south = south;
+    	this.east = east;
+    	this.west = west;
+    	this.southEast = southEast;
+    	this.southWest = southWest;
+    	this.northEast = northEast;
+    	this.northWest = northWest;	
+    	}
 	
 	
 	public String getName() {
@@ -43,4 +64,50 @@ public class Room {
 	public void addRooms(Room room) {
 		this.rooms.add(room);
 	}
+	
+	public Room getNorth() {
+		if(north == null) {
+			
+		}
+		
+		return north;
+	}
+
+
+	public Room getSouth() {
+		return south;
+	}
+
+
+	public Room getEast() {
+		return east;
+	}
+
+
+	public Room getWest() {
+		return west;
+	}
+
+
+
+	public Room getNorthEast() {
+		return northEast;
+	}
+
+
+	public Room getNorthWest() {
+		return northWest;
+	}
+
+
+
+	public Room getSouthEast() {
+		return southEast;
+	}
+
+
+	public Room getSouthWest() {
+		return southWest;
+	}
+
 }

@@ -1,12 +1,11 @@
 package com.mycompany.controller;
 
-import java.util.List;
-
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mycompany.model.Room;
 import com.mycompany.view.IntroductionScreen;
 import com.mycompany.view.WebFacingConsoleIO;
 
@@ -44,7 +43,11 @@ public class GameController {
 			}
 		}
 		
-		//beginning story
+		//iniitializing rooms
+		Room mikesRoom = new Room();
+		
+		
+		
 		
 		
 		return output;
