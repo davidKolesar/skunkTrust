@@ -62,7 +62,6 @@ public class GameController {
 
 			switch (sanitizedResponse) {
 			case "1":
-				skunkTrustResponse = "/n " + "Welcome to SkunkTrust";
 				optionsScreen = false;
 				mikesRoom = createRooms.createMikesRoom();
 				isLightsOn = false;
@@ -88,7 +87,7 @@ public class GameController {
 		int lightsOffCount = 0;
 		
 		if (!isLightsOn) {
-			createRooms.returnLightsAreOff();
+			skunkTrustResponse = createRooms.returnLightsAreOff();
 			lightsOffCount++;
 			if(lightsOffCount >= 3) {
 				skunkTrustResponse = gameChallenges.damageFromLightsOff(hero);
@@ -98,4 +97,4 @@ public class GameController {
 		}
 	}
 
-}
+} 
