@@ -26,34 +26,36 @@ public class GameChallenges {
 		case 3:
 			damageReport = "Bumbling in the darkness, you stub your toe!";
 			hero.takeDamage(dice.roll(1, 5));
-			break;	
+			break;
 		default:
 			damageReport = "Bumbling in the darkness, you stub your toe!";
 			hero.takeDamage(dice.roll(1, 5));
 			break;
 		}
 
-		if(hero.isHeroDead() == true) {
+		if (hero.isHeroDead() == true) {
 			gameOverScreen(hero, damageReport);
 		}
 		return damageReport;
 
 	}
 
-	public String areLightsOn() {
-		
+	public boolean areLightsTurnedOn(String sanitizedResponse) {
+		boolean isLightOn = false;
+
+		if (sanitizedResponse.contains("on lights") || sanitizedResponse.contains("lights on")
+				|| sanitizedResponse.contains("lightswitch") || sanitizedResponse.contains("light switch")
+				|| sanitizedResponse.contains("turn lights")) {
+			isLightOn = true;
+		}
+
+		return isLightOn;
 	}
-	
+
 	public String gameOverScreen(Hero hero, String damageReport) {
 
-		return damageReport + "/n"
-				+ "You have died. "
-				+ "/n"
-				+ "/n"
-				+ "Total Points :  " + hero.getTotalPoints() 
-				+ "/n"
-				+ "Play Again? "
-				+ "/n";
+		return damageReport + "/n" + "You have died. " + "/n" + "/n" + "Total Points :  " + hero.getTotalPoints() + "/n"
+				+ "Play Again? " + "/n";
 
 	}
 

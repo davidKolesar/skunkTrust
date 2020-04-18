@@ -70,7 +70,7 @@ public String warnHackers(String attackType) {
 
 	if(attackAttempts == 0) 
 	   {
-		   return "Ah," + attackType + "? Clever, but not clever enough!“\n Don't try to attack our server, or there will be consequences.";      
+		   return "Ah," + attackType + "? Clever, but not clever enough!ï¿½\n Don't try to attack our server, or there will be consequences.";      
 	   }
 	   
 	   if(attackAttempts == 1) 
@@ -80,7 +80,7 @@ public String warnHackers(String attackType) {
 
 	   if(attackAttempts == 2) 
 	   {
-		   return "Here in SkunkTrust, we'll attack back!";      
+		   return "Here in SkunkTrust, we fight back!";      
 	   }
 	return "";
 }

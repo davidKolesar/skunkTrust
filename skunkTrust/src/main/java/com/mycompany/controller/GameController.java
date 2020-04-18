@@ -42,7 +42,7 @@ public class GameController {
 
 		// first starting game
 		if (!gameStarted) {
-			if (input.contentEquals("start")) {
+			if (sanitizedResponse.contentEquals("start")) {
 				gameStarted = true;
 				optionsScreen = true;
 				return introductionScreen.displayOptionScreen();
@@ -70,26 +70,25 @@ public class GameController {
 
 			}
 		}
-		
+
 		// new game started
 		newGame(sanitizedResponse);
-		
+
 		return sanitizedResponse;
 	}
 
-	public String newGame(String sanitizedResponse) {
-		boolean lightsOn = false;
-		
-		//check if user turns lights on
-		
-		if(optionsScreen) {
-		}
-		
+	public void newGame(String sanitizedResponse) {
+
 		createRooms.createMikesRoom();
-	
-		
-		
-		return "";
+		boolean lightsOn = false;
+
+		// check if user turns lights on
+		lightsOn = gameChallenges.areLightsTurnedOn(sanitizedResponse);
+
+		if (!lightsOn) {
+			sanitizedResponse = gameChallenges.damageFromLightsOff(hero);
+		}
+
 	}
 
 }
