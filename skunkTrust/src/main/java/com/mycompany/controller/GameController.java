@@ -38,8 +38,10 @@ public class GameController {
 
 		// sanitize data
 		String sanitizedResponse = consoleIo.sanitizeString(input);
-
-		if (sanitizedResponse != input.toLowerCase()) {
+		
+		//checking for dection of errors
+		input = input.toLowerCase();
+		if (!sanitizedResponse.contentEquals(input)) {
 			// Detects malicious queries in text field
 			return sanitizedResponse;
 		}
