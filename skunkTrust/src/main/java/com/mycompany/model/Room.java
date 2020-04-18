@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Room {
 	private String name;
 	private int id;
-	private Description description;
+	private String description;
 	private ArrayList<Item> items;
 	private ArrayList<Room> rooms;
 	private Room north;
@@ -43,10 +43,10 @@ public class Room {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public Description getDescription() {
+	public String getDescription() {
 		return description;
 	}
-	public void setDescription(Description description) {
+	public void setDescription(String description) {
 		this.description = description;
 	}
 	public ArrayList<Item> getItems() {
@@ -54,6 +54,9 @@ public class Room {
 	}
 	public void setItems(ArrayList<Item> items) {
 		this.items = items;
+	}
+	public void addItems(Item item) {
+		this.items.add(item);
 	}
 	public ArrayList<Room> getRooms() {
 		return rooms;
@@ -67,8 +70,8 @@ public class Room {
 	
 	public Room getNorth() {
 		if(north == null) {
-			
-		}
+			//handle cannot move
+		} 
 		
 		return north;
 	}

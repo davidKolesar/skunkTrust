@@ -42,15 +42,27 @@ public class GameController {
 				return "Type 'start' to begin.";
 			}
 		}
-		
-		//iniitializing rooms
-		Room mikesRoom = new Room();
-		
-		
-		
-		
+	
+		startOpeningScene(sanitizedResponse);
 		
 		return output;
-
 	}
+	
+	
+	
+
+	/**
+	 * @param sanitizedResponse
+	 */
+	public void startOpeningScene(String sanitizedResponse) {
+		boolean firstReading = true;
+	
+		if(firstReading) {
+			
+		}
+		
+	}
+	
+	
+	
 }
